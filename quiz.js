@@ -47,6 +47,14 @@ function renderQuestion(){
     divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'C'>"+charC+"<br>";
     divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'D'>"+charD+"<br>";
     divContainer.innerHTML += " <button type = 'button' class='nxtBtn' onclick = 'checkAnswer()'>Finish</button>";
+  }else if(pos >= 1 && pos < questions.length-1){
+    divContainer.innerHTML = "<h3>"+question+"</h3>";
+  divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'A'>"+charA+"<br>";
+  divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'B'>"+charB+"<br>";
+  divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'C'>"+charC+"<br>";
+  divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'D'>"+charD+"<br>";
+  divContainer.innerHTML += " <button type = 'button' class='prevBtn' onclick = 'checkAnswer()'>Prev</button>";
+  divContainer.innerHTML += " <button type = 'button' class='nxtBtn' onclick = 'checkAnswer()'>Next</button>";
   }else{
   divContainer.innerHTML = "<h3>"+question+"</h3>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'A'>"+charA+"<br>";
