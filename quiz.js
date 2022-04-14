@@ -1,9 +1,9 @@
-let formId = document.querySelector("#container");
+
 let counter = document.querySelector("#count");
 let divContainer = document.querySelector("#questionContainer");
 var charA,charB,charC,charD,question,choices,choice;
 let pos =0;
-let correct =0;
+var correct =0;
 let nxtBtn = document.querySelector(".nxtBtn");
 let prevBtn = document.querySelector(".prevBtn");
 let subBtn = document.querySelector(".subBtn");
@@ -27,7 +27,7 @@ let questions = [
 function renderQuestion(){
   if(pos >= questions.length){
     divContainer.innerHTML = "<h1>Test Finished</h1>";
-    divContainer.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+    divContainer.innerHTML += "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
     pos = 0;
     correct = 0;
     return false;
@@ -47,14 +47,14 @@ function renderQuestion(){
     divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'C'>"+charC+"<br>";
     divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'D'>"+charD+"<br>";
     divContainer.innerHTML += " <button type = 'button' class='nxtBtn' onclick = 'checkAnswer()'>Finish</button>";
-  }else if(pos >= 1 && pos < questions.length-1){
+  /*}else if(pos >= 1 && pos < questions.length-1){
     divContainer.innerHTML = "<h3>"+question+"</h3>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'A'>"+charA+"<br>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'B'>"+charB+"<br>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'C'>"+charC+"<br>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'D'>"+charD+"<br>";
-  divContainer.innerHTML += " <button type = 'button' class='prevBtn' onclick = 'checkAnswer()'>Prev</button>";
-  divContainer.innerHTML += " <button type = 'button' class='nxtBtn' onclick = 'checkAnswer()'>Next</button>";
+  divContainer.innerHTML += " <button type = 'button' class='prevBtn' onclick = 'prevAnswer()'>Prev</button>";
+  divContainer.innerHTML += " <button type = 'button' class='nxtBtn' onclick = 'checkAnswer()'>Next</button>";*/
   }else{
   divContainer.innerHTML = "<h3>"+question+"</h3>";
   divContainer.innerHTML += "<input type = 'radio' name = 'choices' value = 'A'>"+charA+"<br>";
@@ -70,16 +70,22 @@ function checkAnswer(){
   choices = document.getElementsByName("choices");
   
   for(var i=0; i<choices.length; i++){
-    if(choices[i].checked){
+    if(choices[i].checked == true){
       choice = choices[i].value;
+      if(choice == questions[pos][5]){
+        correct++;
+      }
     }
   }
-    if(choice == questions[pos][5]){
-      correct++;
-    }
   pos++;
   renderQuestion();
   }
+
+  function prevAnswer(){
+    pos--;
+    renderQuestion();
+  }
+  
 
 
 
