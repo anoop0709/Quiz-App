@@ -40,7 +40,7 @@ body{
     height: 600px;
     color:#03045E;
     border-radius: 10px;
-    padding: 0px;
+    padding: 30px;
 }
 #questionContainer h3{
     font-size: 25px;
@@ -67,6 +67,9 @@ body{
     height: 60px;
     border-radius: 10px;
     font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 
 }
@@ -141,7 +144,7 @@ body{
     }
     h3 {
         position: absolute;
-        top: 20px;
+        top: 60px;
         font-size: 20px;
 
     }
@@ -150,20 +153,20 @@ body{
         display: block;
         position: absolute;
         margin: 0px;
-        padding: 0px;
+        padding: 10px;
         background-color: #16C79A;
         max-width: 80%;
-        height: auto;
+        height: 60%;
         color:#03045E;
         border-radius: 10px;
-        margin-top: 30px;
+        margin-top: 0px;
        
     }
     
     #questionContainer h3{
         font-size: 16px;
         position: relative;
-        margin: 0px;
+        margin-top: 20px;
         
     }
     #questionContainer input{
