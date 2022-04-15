@@ -30,7 +30,7 @@ function renderQuestion(){
     if(correct == questionsArray.length){
       divContainer.innerHTML = "<h2>Test Finished</h2>";
       divContainer.innerHTML += "<h4>You got "+correct+" of "+questionsArray.length+" questions correct</h4>";
-      divContainer.innerHTML = "<h2>AWESOME!</h2>";
+      divContainer.innerHTML += "<h2>AWESOME!</h2>";
     }else if(correct >= 9 && correct <= 11){
       divContainer.innerHTML = "<h2>Test Finished</h2>";
       divContainer.innerHTML += "<h4>You got "+correct+" of "+questionsArray.length+" questions correct</h4>";
